@@ -1,0 +1,14 @@
+AddDefaultCharset utf-8
+
+AddType text/css .css
+
+AddType application/javascript .js
+
+RewriteEngine on
+
+RewriteBase /briefcreate
+
+RewriteCond %{REQUEST_URI} !(gif|jpe?g|png|js|css|swf|php|ico|txt|pdf|xml|woff)$
+
+RewriteRule ^ index.php
+
