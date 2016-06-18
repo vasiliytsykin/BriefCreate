@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="<?php echo Root; ?>/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="<?php echo Root; ?>/css/museosans/museosans.css"/>
-    <link rel="stylesheet" href="<?php echo Root; ?>/css/museosans/stylesheet.css"/>
-    <link rel="stylesheet" href="<?php echo Root; ?>/css/site.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/museosans/museosans.css"/>
+    <link rel="stylesheet" href="/css/museosans/stylesheet.css"/>
+    <link rel="stylesheet" href="/css/site.css"/>
     <title>BriefCreate</title>
 </head>
 <body>
@@ -17,8 +17,8 @@
 </div> <!-- container -->
 <div class="nav navbar"></div>
 
-<script src="<?php echo Root; ?>/javascript/jquery-2.2.4.min.js"></script>
-<script src="<?php echo Root; ?>/javascript/jquery.validate.min.js"></script>
-<script src="<?php echo Root; ?>/javascript/bootstrap.min.js"></script>
+<script src="/javascript/jquery-2.2.4.min.js"></script>
+<script src="/javascript/jquery.validate.min.js"></script>
+<script src="/javascript/bootstrap.min.js"></script>
 </body>
 </html>

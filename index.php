@@ -7,7 +7,6 @@ error_reporting(E_ALL);
 
 // подключение файлов системы
 
-define('Root', "/briefcreate");
 require_once "components/router.php";
 
 // подключение к БД

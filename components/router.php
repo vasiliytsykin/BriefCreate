@@ -3,44 +3,50 @@
 
 class router
 {
-    private $routes;
+    private $controllerName;
+    private $actionName;
+    private $parameters;
     
     public function __construct()
     {
-        $routesPath = "config/routes.php";
-        $this->routes = include($routesPath);
+        $this->controllerName = 'mainController';
+        $this->actionName = 'get_form';
+        $this->parameters = array();
     }
 
-    private function getURI()
+    private function getUriPath()
     {
         if(!empty($_SERVER['REQUEST_URI']))
-            return trim($_SERVER['REQUEST_URI'], '/');
+            return trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
     }
     
     public function run()
     {
+        if($_SERVER['REQUEST_URI'] != '/')
+        {
+            try{
+                $uriPath = $this->getUriPath();
+                $segments = explode('/', $uriPath);
+                if(count($segments) % 2)
+                    throw new Exception();
 
-        $uri = $this->getURI();
+                $this->controllerName = array_shift($segments) . "Controller";
+                $this->actionName = array_shift($segments);
 
-        foreach ($this->routes as $pattern => $path)
-            if(preg_match("~$pattern~", $uri))
-            {
-                $internalPath = preg_replace("~$pattern~", $path, $uri);
+                for ($i = 0; $i < count($segments); $i++)
+                    $this->parameters[$segments[$i]] = $segments[++$i];
 
-                $segments = explode('/', $internalPath);
-                $controllerName = array_shift($segments) . "Controller";
-                $actionName = array_shift($segments);
-
-                $parameters = $segments;
-
-                $controllerFile = "controllers/" . $controllerName . ".php";
-                if (file_exists($controllerFile))
-                    include_once($controllerFile);
-
-                $controller = new $controllerName;
-                $result = $controller->$actionName($parameters);
-                if($result != null)
-                    break;
             }
+            catch (Exception $e) {
+
+            }
+
+        }
+        $controllerFile = "controllers/" . $this->controllerName . ".php";
+            if (file_exists($controllerFile))
+                include_once($controllerFile);
+        
+        $action = new ReflectionMethod($this->controllerName, $this->actionName);
+        $action->invokeArgs(new $this->controllerName, array($this->parameters));
     }
 }

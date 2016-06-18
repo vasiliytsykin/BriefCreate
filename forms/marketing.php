@@ -1,5 +1,5 @@
 <div class="col-md-5">
-    <form action="<?php echo Root; ?>/form/generalInfo" method="post" id="marketing">
+    <form action="/main/get_form/id/general_info" method="post" id="marketing">
         <h1>Маркетинг</h1>
         <div class="form-group">
             <input type="text" class="form-control" id="competitor" placeholder="Конкуренты">

@@ -1,5 +1,5 @@
 <div class="col-md-5">
-    <form action="<?php echo Root; ?>/form/marketing" method="post" id="client-data">
+    <form action="/main/get_form/id/marketing" method="post" id="client-data">
         <h1>Создать бриф</h1>
         <div class="form-group">
             <input type="text" class="form-control" id="company" placeholder="Ваша компания">
