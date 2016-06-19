@@ -1,4 +1,74 @@
 ﻿body {
 
     font-family: 'Museo Sans';
+    background-color: #4bbf6b;
+    color:#FFF;
+}
+
+.h1{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 57px;
+    text-align: center;
+    font-size: 40px;
+
+}
+
+.header{
+    height: 190px;
+}
+
+.footer{
+    height: 76px;
+}
+
+.container{
+    width: 768px;
+    padding: inherit;
+}
+
+.col-md-5{
+    float: none;
+    width: 59%;
+    margin: auto;
+}
+
+.form-control{
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: #68c983;
+    height: 62px;
+    margin-bottom: 33px;
+}
+
+.form-control::-webkit-input-placeholder{
+    text-align: center;
+    color: #fff;
+    opacity: 0.8;
+    font-size: 16px;
+    letter-spacing: 0.7px;
+}
+
+.next-btn{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 255px;
+    text-align: center;
+}
+
+.next-text{
+    font-weight: 900;
+}
+
+.btn.btn-default{
+    border: none;
+    border-radius: 27px;
+    width: 51%;
+    height: 70px;
+    color: #4bbf6b;
+    font-size: 40px;
+    padding: inherit;
 }

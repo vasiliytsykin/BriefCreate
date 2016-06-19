@@ -1,15 +1,12 @@
 AddDefaultCharset utf-8
 
 AddType text/css .css
-
 AddType application/javascript .js
-
 AddType application/font .woff
 AddType application/font .woff2
 AddType application/font .ttf
 
 RewriteEngine on
-
 RewriteBase /
 
 RewriteCond %{REQUEST_FILENAME} !-f

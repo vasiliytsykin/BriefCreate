@@ -1,6 +1,6 @@
 <div class="col-md-5">
     <form action="/main/get_form/id/marketing" method="post" id="client-data">
-        <h1>Создать бриф</h1>
+        <h1 class="h1">Создать бриф</h1>
         <div class="form-group">
             <input type="text" class="form-control" id="company" placeholder="Ваша компания">
         </div>
@@ -31,6 +31,11 @@
             <input type="text" class="form-control" id="guideline"
                    placeholder="Наличие гайдлайна, элементов фирменного стиля">
         </div>
-        <button type="submit" class="btn btn-default"><strong>Далee ></strong></button>
+        <div class="next-btn">
+            <button type="submit" class="btn btn-default">
+                    <span class="next-text">Далee ></span>
+            </button>
+        </div>
+        
     </form>
 </div> <!-- form -->
