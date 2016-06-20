@@ -4,9 +4,6 @@ require_once "components/recorder.php";
 
 class mainController
 {
-    private $form;
-
-
     public function get_form($parameters)
     {
         

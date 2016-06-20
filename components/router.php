@@ -1,29 +1,26 @@
 <?php
 
-require_once "components/routeInfo.php";
+require_once "components/routeParser.php";
+require_once "controllers/errorController.php";
 
 class router
 {
-    private $controllerName;
-    private $actionName;
-    private $parameters;
-    
-    public function __construct()
-    {
-        $this->controllerName = 'mainController';
-        $this->actionName = 'get_form';
-        $this->parameters = array();
-    }
-    
     public function run()
     {
-        $routeInfo = new routeInfo();
+        $routeParser = new routeParser();
 
-        $controllerFile = "controllers/" . $routeInfo->controllerName . ".php";
-            if (file_exists($controllerFile))
-                include_once($controllerFile);
-        
-        $action = new ReflectionMethod($routeInfo->controllerName, $routeInfo->actionName);
-        $action->invokeArgs(new $routeInfo->controllerName, array($routeInfo->parameters));
+
+        try {
+            $routeInfo = $routeParser->parse($_SERVER['REQUEST_URI']);
+            $controllerFile = "controllers/" . $routeInfo->controllerName . ".php";
+            include_once($controllerFile);
+            $action = new ReflectionMethod($routeInfo->controllerName, $routeInfo->actionName);
+            $action->invokeArgs(new $routeInfo->controllerName, array($routeInfo->parameters));
+        }
+        catch (Exception $e)
+        {
+            $error = new errorController();
+            $error->get_error_page();
+        }
     }
 }

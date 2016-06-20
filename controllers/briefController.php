@@ -4,8 +4,6 @@ require_once "components/recorder.php";
 
 class briefController
 {
-
-
     public function create()
     {
         $recorder = new recorder();
