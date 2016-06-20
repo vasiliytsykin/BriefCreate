@@ -2,33 +2,33 @@
     <form action="/main/get_form/id/marketing" method="post" id="client-data">
         <h1 class="h1">Создать бриф</h1>
         <div class="form-group">
-            <input type="text" class="form-control" id="company" placeholder="Ваша компания">
+            <input type="text" class="form-control" name="company" placeholder="Ваша компания">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="contact" placeholder="Контактное лицо">
+            <input type="text" class="form-control" name="contact" placeholder="Контактное лицо">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="product-name"
+            <input type="text" class="form-control" name="product_name"
                    placeholder="Название (предприятия, товара или услуги)">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="sphere" placeholder="Сфера деятельности">
+            <input type="text" class="form-control" name="sphere" placeholder="Сфера деятельности">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="geography" placeholder="География деятельности">
+            <input type="text" class="form-control" name="geography" placeholder="География деятельности">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="product-specs" 
+            <input type="text" class="form-control" name="product_specs"
                    placeholder="Основные характеристики товаров и услуг">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="target-group" placeholder="Целевая аудитория">
+            <input type="text" class="form-control" name="target_group" placeholder="Целевая аудитория">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="key-words" placeholder="Семантическое ядро">
+            <input type="text" class="form-control" name="key_words" placeholder="Семантическое ядро">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="guideline"
+            <input type="text" class="form-control" name="guideline"
                    placeholder="Наличие гайдлайна, элементов фирменного стиля">
         </div>
         <div class="next-btn">

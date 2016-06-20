@@ -9,6 +9,8 @@ error_reporting(E_ALL);
 
 require_once "components/router.php";
 
+session_start();
+
 // подключение к БД
 
 /*

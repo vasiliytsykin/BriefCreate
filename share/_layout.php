@@ -13,7 +13,7 @@
     
     <header class="header" id="header"></header>
 
-    <?php require_once("forms/$form") ?>
+    <?php require_once("$folder/$file") ?>
 
     <footer class="footer"></footer>
 

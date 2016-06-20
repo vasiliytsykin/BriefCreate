@@ -1,15 +1,24 @@
 <?php
 
+require_once "components/recorder.php";
+
 class mainController
 {
     private $form;
-    
+
+
     public function get_form($parameters)
     {
+        
+        $recorder = new recorder();
+        $recorder->record();
+
         if(empty($parameters))
-            $form = "client_data.php";
+            $file = "client_data.php";
         else
-            $form = $parameters['id'] . ".php";
+            $file = $parameters['id'] . ".php";
+        
+        $folder = 'forms';
         
         include_once("share/_layout.php");
     }
