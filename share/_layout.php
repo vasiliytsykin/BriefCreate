@@ -11,7 +11,9 @@
 
 <div class="container">
     
-    <header class="header" id="header"></header>
+    <header class="header" id="header">
+        <img class="logo" src="/img/logo.png" alt="logo" width="111" height="99">
+    </header>
 
     <?php require_once("$folder/$file") ?>
 

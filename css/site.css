@@ -17,10 +17,18 @@
 
 .header{
     height: 190px;
+    padding-top: 40px;
 }
 
 .footer{
     height: 76px;
+
+}
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container{
@@ -41,13 +49,26 @@
     background-color: #68c983;
     height: 62px;
     margin-bottom: 33px;
+    font-size: 16px;
+    opacity: 0.8;
 }
 
 .form-control::-webkit-input-placeholder{
     text-align: center;
     color: #fff;
     opacity: 0.8;
-    font-size: 16px;
+}
+
+.form-control::-moz-placeholder{
+    text-align: center;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.form-control:-ms-input-placeholder{
+    text-align: center;
+    color: #fff;
+    opacity: 0.8;
 }
 
 .next-btn{
