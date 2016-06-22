@@ -11,19 +11,39 @@ class recorder
             $_SESSION[$key] = $value;
     }
 
-    public function push_to_db(array $session)
+    public function push_to_db($dbName, $tableName, array $data)
     {
-        $dsn = 'mysql:dbname=briefdb;host=localhost;charset=utf8';
 
         try {
-            $dbo = new PDO($dsn, 'root', 'savincov07');
-            $query = $dbo->prepare($this->create_query($session));
-            $session['id'] = null;
-            $this->execute_query($query, $session);
+            $dbo = $this->connect_to_db($dbName);
+            $query = $dbo->prepare($this->create_query($tableName, $data));
+            $data['id'] = null;
+            $this->execute_query($query, $data);
         }
         catch (Exception $e){
             throw $e;
         }
+    }
+    
+    public function fetch_from_db($dbName, $tableName, $id){
+
+        $dbo = $this->connect_to_db($dbName);
+        return $dbo->query("select * from $tableName where id = $id")->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function get_last_id($dbName, $tableName){
+
+        $dbo = $this->connect_to_db($dbName);
+        $res = $dbo->query("SHOW TABLE STATUS LIKE '$tableName'");
+        if($row = $res->fetch(PDO::FETCH_ASSOC))
+        return intval($row['Auto_increment']);
+        return 1;
+    }
+    
+    private function connect_to_db($dbName){
+
+        $dsn = "mysql:dbname=$dbName;host=localhost;charset=utf8";
+        return new PDO($dsn, 'root', 'savincov07');
     }
     
     private function execute_query(PDOStatement $query, array $session){
@@ -32,14 +52,14 @@ class recorder
             throw new Exception();
     }
 
-    private function create_query(array $session)
+    private function create_query($tableName, array $data)
     {
-        $start = "insert into brief (";
+        $start = "insert into $tableName (";
         $mid = ") values (";
         $cols = "id, ";
         $values = ":id, ";
 
-        foreach ($session as $key => $value)
+        foreach ($data as $key => $value)
         {
             $cols = $cols . $key . ", ";
             $values = $values . ':' . $key . ", ";

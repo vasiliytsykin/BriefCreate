@@ -15,6 +15,12 @@
 
 }
 
+.h1.report-h1{
+    margin-top: 5px;
+}
+
+
+
 .header{
     height: 190px;
     padding-top: 40px;
@@ -32,7 +38,7 @@
 }
 
 .container{
-    width: 768px;
+    //width: 768px;
     padding: inherit;
 }
 
@@ -51,6 +57,19 @@
     margin-bottom: 33px;
     font-size: 16px;
     opacity: 0.8;
+}
+
+.form-control.brief-ref{
+    text-align: center;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 9px;
+}
+
+.ref{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .form-control::-webkit-input-placeholder{
@@ -91,4 +110,38 @@
     color: #4bbf6b;
     font-size: 40px;
     padding: inherit;
+}
+
+.h5.report-h5{
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.report-block{
+    height: 62px;
+    margin-bottom: 33px;
+    font-size: 16px;
+}
+
+.report-h6{
+    font-size: 8px;
+    text-transform:  uppercase;
+}
+
+.contact-info{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    line-height: 1.5;
+}
+
+.report-h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
 }
