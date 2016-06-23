@@ -12,7 +12,7 @@
 <div class="container">
     
     <header class="header" id="header">
-        <img class="logo" src="/img/logo.png" alt="logo" width="111" height="99">
+        <a href="/"><img class="logo" src="/img/logo.png" alt="logo" width="111" height="99"></a>
     </header>
 
     <?php require_once("$folder/$file") ?>
@@ -26,5 +26,7 @@
 <script src="/javascript/jquery-2.2.4.min.js"></script>
 <script src="/javascript/jquery.validate.min.js"></script>
 <script src="/javascript/bootstrap.min.js"></script>
+<script src="/javascript/clipboard.min.js"></script>
+<script src="/javascript/site.js"></script>
 </body>
 </html>

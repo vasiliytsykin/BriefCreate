@@ -11,8 +11,7 @@ class recorder
             $_SESSION[$key] = $value;
     }
 
-    public function push_to_db($dbName, $tableName, array $data)
-    {
+    public function push_to_db($dbName, $tableName, array $data){
 
         try {
             $dbo = $this->connect_to_db($dbName);
@@ -28,7 +27,9 @@ class recorder
     public function fetch_from_db($dbName, $tableName, $id){
 
         $dbo = $this->connect_to_db($dbName);
-        return $dbo->query("select * from $tableName where id = $id")->fetch(PDO::FETCH_ASSOC);
+        return $dbo
+            ->query("select * from $tableName where id = $id")
+            ->fetch(PDO::FETCH_ASSOC);
     }
 
     public function get_last_id($dbName, $tableName){
@@ -45,15 +46,9 @@ class recorder
         $dsn = "mysql:dbname=$dbName;host=localhost;charset=utf8";
         return new PDO($dsn, 'root', 'savincov07');
     }
-    
-    private function execute_query(PDOStatement $query, array $session){
-        
-        if(!$query->execute($session))
-            throw new Exception();
-    }
 
-    private function create_query($tableName, array $data)
-    {
+    private function create_query($tableName, array $data){
+        
         $start = "insert into $tableName (";
         $mid = ") values (";
         $cols = "id, ";
@@ -66,6 +61,11 @@ class recorder
         }
 
         return $start . trim($cols, ", ") . $mid . trim($values, ", ") . ")";
+    }
 
+    private function execute_query(PDOStatement $query, array $session){
+
+        if(!$query->execute($session))
+            throw new Exception();
     }
 }

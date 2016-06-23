@@ -110,9 +110,10 @@
     color: #4bbf6b;
     font-size: 40px;
     padding: inherit;
+    outline: none;
 }
 
-.h5.report-h5{
+.report-h5{
     width: 100%;
     text-align: center;
     margin-left: auto;

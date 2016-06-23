@@ -32,6 +32,7 @@ class briefController
         
         $folder = "share";
         $file = "report.php";
+        $uri = "http://" . $_SERVER['SERVER_NAME']  . $_SERVER['REQUEST_URI'];
         require_once ("share/_layout.php");
     }
 }

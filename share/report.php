@@ -8,12 +8,10 @@ $phone = $contactSegments[1];
 
 ?>
 
-<h5 class="h5 report-h5">Бриф на разработку сайта</h5>
+<h5 class="report-h5">Бриф на разработку сайта</h5>
 <h1 class="h1 report-h1"><?php echo $data['company']?></h1>
 
 <div class="col-md-5">
-
-
 
     <div class="report-block">
         <h6 class="report-h6">Контакты</h6>
@@ -39,7 +37,15 @@ $phone = $contactSegments[1];
 
     <h3 class="report-h3">Постоянная ссылка</h3>
 
-    <div class="form-control brief-ref"><span class="ref">ссылка</span></div>
+    <div class="form-control brief-ref">
+        <span class="ref" id="link"><?php echo $uri?></span>
+    </div>
+
+    <div class="next-btn">
+        <button class="btn btn-default" id="copy-button" data-clipboard-target="#link">
+            <span class="next-text">Copy</span>
+        </button>
+    </div>
 
 </div>
 
