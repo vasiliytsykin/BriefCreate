@@ -5,7 +5,8 @@
             <input type="text" class="form-control" name="company" placeholder="Ваша компания">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="contact" placeholder="Контактное лицо">
+            <input type="text" class="form-control" name="contact"
+                   placeholder="Контактные данные лица, ведущего проект со стороны заказчика">
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="product_name"

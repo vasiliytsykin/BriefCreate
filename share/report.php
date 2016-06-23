@@ -42,8 +42,8 @@ $phone = $contactSegments[1];
     </div>
 
     <div class="next-btn">
-        <button class="btn btn-default" id="copy-button" data-clipboard-target="#link">
-            <span class="next-text">Copy</span>
+        <button class="btn btn-default btn-copy" id="copy-button" data-clipboard-target="#link">
+            <span>копировать</span>
         </button>
     </div>
 

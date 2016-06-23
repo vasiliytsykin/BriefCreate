@@ -12,7 +12,7 @@
 <div class="container">
     
     <header class="header" id="header">
-        <a href="/"><img class="logo" src="/img/logo.png" alt="logo" width="111" height="99"></a>
+        <a href="/"><img src="/img/logo.png" alt="logo" width="111" height="99"></a>
     </header>
 
     <?php require_once("$folder/$file") ?>
