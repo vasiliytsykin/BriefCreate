@@ -21,14 +21,12 @@ class briefController
 
             echo "что то пошло не так";
         }
-
-
     }
 
     public function show_report(array $parameters){
         
         $recorder = new recorder();
-        $data = $recorder->fetch_from_db('briefdb', 'brief',$parameters['id']);
+        $data = $recorder->fetch_from_db('briefdb', 'brief', $parameters['id']);
         
         $folder = "share";
         $file = "report.php";

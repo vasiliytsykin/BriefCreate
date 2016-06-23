@@ -42,8 +42,8 @@ class recorder
     }
     
     private function connect_to_db($dbName){
-
-        $dsn = "mysql:dbname=$dbName;host=localhost;charset=utf8";
+        
+        $dsn = include_once("config/connectionString.php");
         return new PDO($dsn, 'root', 'savincov07');
     }
 

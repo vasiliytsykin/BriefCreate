@@ -28,5 +28,6 @@
 <script src="/javascript/bootstrap.min.js"></script>
 <script src="/javascript/clipboard.min.js"></script>
 <script src="/javascript/site.js"></script>
+<script src="/javascript/validation.js"></script>
 </body>
 </html>
