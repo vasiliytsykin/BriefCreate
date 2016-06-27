@@ -1,5 +1,5 @@
 <div class="col-md-5">
-    <form action="/brief/create" method="post" id="marketing">
+    <form action="/main/get_form/id/design_claim" method="post" id="marketing">
         <h1 class="h1">Общие сведения</h1>
         <div class="form-group">
             <input type="text" class="form-control required" name="task"
@@ -15,7 +15,7 @@
         </div>
         <div class="next-btn">
             <button type="submit" class="btn btn-default">
-                <span class="next-text">Создать ></span>
+                <span class="next-text">Далее ></span>
             </button>
         </div>
     </form>
